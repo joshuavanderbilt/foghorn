@@ -1,17 +1,26 @@
 // Requires winjs
 //
-// Turron Technologies
+// Turron Technologies 
 // Codename Foghorn
 //
 // Core applications and launcher.
 
 function apps() {
-	openwindow("Applications",`
-	<button onclick="about()">About System</button>
-	<button onclick="sroot()">Browse Server</button>
-	<button onclick="furry()">Furry</button>
-	<button onclick="textarea()">TextArea</button>
+	appsclose();
+	launcherclose();
+	newwindow("appmenu", "Applications",`
+	<button onclick="about();appsclose()">About System</button>
+	<button onclick="sroot();appsclose()">Browse Server</button>
+	<button onclick="furry();appsclose()">Furry</button>
+	<button onclick="textarea();appsclose()">TextArea</button>
 	`);
+}
+
+function appsclose() {
+	const element = document.getElementById("appmenu");
+	if (element !== null) {
+		element.remove();
+	}
 }
 
 function about() {
@@ -27,5 +36,5 @@ function furry() {
 }
 
 function textarea() {
-        openwindow("TextArea","<textarea id='codetext' rows='32' cols='64'></textarea><br><button onclick=\"openwindow('Window',document.getElementById('codetext').value);\">Make Window</button>");
+	openwindow("TextArea","<textarea id='codetext' rows='32' cols='64'></textarea><br><button onclick=\"openwindow('Window',document.getElementById('codetext').value);\">Make Window</button>");
 }
