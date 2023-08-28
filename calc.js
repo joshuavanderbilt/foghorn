@@ -23,7 +23,7 @@ function calc() {
 }
 
 function calcclose() {
-	const element = document.getElementByid("calc");
+	const element = document.getElementById("calc");
 	if (element !== null) {
 		element.remove();
 	}
