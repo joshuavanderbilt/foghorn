@@ -12,9 +12,14 @@ function launcherclose() {
         }
 }
 
+function run () {
+	var el = document.getElementById('wintext');
+	el && eval(el.value);
+}
+
 
 function launcher() {
 	launcherclose();
 	appsclose();
-	newwindow("launcher","Launcher","<input type='text' id='wintext' style='width:640px'><button onclick=\"openwindow('Window',document.getElementById('wintext').value);launcherclose();\">Make Window</button><button onclick=\"iwindow('iFrame',document.getElementById('wintext').value,640,480);launcherclose();\">Make iFrame</button>");
+	newwindow("launcher","Launcher","<input type='text' id='wintext' style='width:640px'><button onclick=\"openwindow('Window',document.getElementById('wintext').value);launcherclose();\">Make Window</button><button onclick=\"iwindow('iFrame',document.getElementById('wintext').value,640,480);launcherclose();\">Make iFrame</button><button onclick=\"run();launcherclose();\">Execute JS</button>");
 }
