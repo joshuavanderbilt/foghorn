@@ -13,6 +13,7 @@ function apps() {
 	<button onclick="sroot();appsclose()">Browse Server</button>
 	<button onclick="furry();appsclose()">Furry</button>
 	<button onclick="textarea();appsclose()">TextArea</button>
+	<button onclick="calc();appsclose()">Calculator</button>
 	`);
 }
 
