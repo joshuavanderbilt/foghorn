@@ -6,6 +6,7 @@
 // Calculator
 
 function calc() {
+	calcclose();
 	newwindow("calc","Calculator",`
 	<input type="text" id="calctext" style="width:320">
 	<br>
@@ -19,6 +20,13 @@ function calc() {
 	<br>
 	<button onclick="cins('');">---</button><button onclick="cins('0');">0</button><button onclick="cins('');">---</button><button onclick="cins('');">---</button>
 	`);
+}
+
+function calcclose() {
+	const element = document.getElementByid("calc");
+	if (element !== null) {
+		element.remove();
+	}
 }
 
 function calcclear() {
