@@ -7,12 +7,12 @@ function settings() {
 	`);
 }
 function changebgcolor(color) {
-	document.getElementById("desktop").style = ("background-color:" + color + ";background-image:url('" + getCookie("bgimage") + "')");
-	document.cookie = "bgcolor=" + color
+	document.cookie = "bgcolor=" + color;
+	restoresettings();
 }
 function changebgimage(image) {
-	document.getElementById("desktop").style = ("background-color:" + getCookie("bgcolor") + ";background-image:url('" + image + "')");
-	document.cookie = "bgimage=" + image
+	document.cookie = "bgimage=" + image;
+	restoresettings();
 }
 
 function getCookie(name) {
