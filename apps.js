@@ -10,6 +10,7 @@ function apps() {
 	launcherclose();
 	newwindow("appmenu", "Applications",`
 	<button onclick="about();appsclose()">About System</button>
+	<button onclick="settings();appsclose()">Settings</button>
 	<button onclick="sroot();appsclose()">Browse Server</button>
 	<button onclick="furry();appsclose()">Furry</button>
 	<button onclick="textarea();appsclose()">TextArea</button>
