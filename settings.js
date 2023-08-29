@@ -3,22 +3,16 @@ function settings() {
 	<input type="text" id="bgtext" style="width:320">
 	<button onclick="changebgcolor(document.getElementById('bgtext').value);">Change Background Color (HEX)</button>
 	<button onclick="changebgimage(document.getElementById('bgtext').value);">Change Background Image (URL)</button>
-	<button onclick="defaultbg();">Use Default Background</button>
+	<button onclick="factoryreset();">Reset To Defaults</button>
 	`);
 }
 function changebgcolor(color) {
-	document.getElementById("desktop").style = ("background-color:" + color);
+	document.getElementById("desktop").style = ("background-color:" + color + ";background-image:url('" + getCookie("bgimage") + "')");
 	document.cookie = "bgcolor=" + color
-	document.cookie = "bgimage=undefined"
 }
 function changebgimage(image) {
-	document.getElementById("desktop").style = ("background-image:url('" + image + "')");
+	document.getElementById("desktop").style = ("background-color:" + getCookie("bgcolor") + ";background-image:url('" + image + "')");
 	document.cookie = "bgimage=" + image
-	document.cookie = "bgcolor=undefined"
-}
-function defaultbg() {
-	changebgcolor("008080");
-	changebgimage("bg.png");
 }
 
 function getCookie(name) {
@@ -28,22 +22,19 @@ function getCookie(name) {
 }
 
 function restoresettings() {
-	if (getCookie("bgcolor") !== "undefined" ) {
-		changebgcolor(getCookie("bgcolor"));
-	}
-	if (getCookie("bgimage") !== "undefined") {
-		changebgimage(getCookie("bgimage"));
-	}
-	if (getCookie("bgimage") == "undefined" && getCookie("bgcolor") == "undefined") {
-		changebgimage("bg.png");
-	}
-	// This last if statement stops the screen from flashing white if the default background is set.
-	if (getCookie("bgimage") == "bg.png") {
+	console.log(getCookie("bgimage"));
+	console.log(getCookie("bgcolor"));
+	if (getCookie("bgimage") == undefined && getCookie("bgcolor") == undefined) {
 		document.getElementById("desktop").style = ("background-color:#008080;background-image:url('bg.png');");
+		console.log("Cookies are undefined, default values used.");
+	} else {
+		document.getElementById("desktop").style = ("background-color:" + getCookie("bgcolor") + ";background-image:url('" + getCookie("bgimage") + "')")
+		console.log("Cookied are defined, restoring settings...");
 	}
 }
 
 function factoryreset() {
 	document.cookie = "bgimage=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 	document.cookie = "bgcolor=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	restoresettings();
 }
