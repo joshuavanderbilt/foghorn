@@ -37,6 +37,10 @@ function restoresettings() {
 	if (getCookie("bgimage") == "undefined" && getCookie("bgcolor") == "undefined") {
 		changebgimage("bg.png");
 	}
+	// This last if statement stops the screen from flashing white if the default background is set.
+	if (getCookie("bgimage") == "bg.png") {
+		document.getElementById("desktop").style = ("background-color:#008080;background-image:url('bg.png');");
+	}
 }
 
 function factoryreset() {
