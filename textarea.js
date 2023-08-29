@@ -9,6 +9,7 @@ function textarea() {
 	<button onclick="openwindow('Window',document.getElementById('codetext').value);">Make Window</button>
 	<button onclick="textrun();">Execute JS</button>
 	<button onclick="save();">Save File</button>
+	<button onclick="loadurl();">Load From URL</button>
 		`);
 }
 
@@ -28,3 +29,8 @@ function save() {
     anchor.click();
     document.body.removeChild(anchor);
  }
+function loadurl() {
+	fetch(window.prompt("Enter URL"))
+  	.then(response => response.text())
+  	.then(text => { document.getElementById("codetext").value =text;})
+}
