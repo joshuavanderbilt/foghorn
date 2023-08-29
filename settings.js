@@ -4,6 +4,8 @@ function settings() {
 	<button onclick="changebgcolor(document.getElementById('bgtext').value);">Change Background Color (HEX)</button>
 	<button onclick="changebgimage(document.getElementById('bgtext').value);">Change Background Image (URL)</button>
 	<button onclick="defaultbg();">Use Default Background</button>
+	<br>
+	<p>Warning! Settings cannot currently by saved.</p>
 	`);
 }
 function changebgcolor(color) {
