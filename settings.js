@@ -5,7 +5,7 @@ function settings() {
 	<button onclick="changebgimage(document.getElementById('bgtext').value);">Change Background Image (URL)</button>
 	<button onclick="defaultbg();">Use Default Background</button>
 	<br>
-	<p>Warning! Settings cannot currently by saved.</p>
+	<p>Warning! Settings cannot currently be saved.</p>
 	`);
 }
 function changebgcolor(color) {
