@@ -6,7 +6,7 @@ function newwindow(id, title, wincontent, width) {
 	//Windows will be inserted into the element with the id "desktop"
 	var desktop = document.getElementById("desktop");
 	desktop.innerHTML += `
-	<div class='window active' id="` + id + `" style='position:absolute;left:40px;top:40px;width:" + width + "px;'>
+	<div class='window active' id="` + id + `" style='position:absolute;left:40px;top:40px;width:` + width + `px;'>
 		<div class='title-bar'><div class='title-bar-text'>` + title + `</div>
 			<div class='title-bar-controls'><button onclick='const element = document.getElementById("` + id + `");element.remove()' aria-label='Close'></button>
 		</div>
