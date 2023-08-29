@@ -29,7 +29,7 @@ function restoresettings() {
 		console.log("Cookies are undefined, default values used.");
 	} else {
 		document.getElementById("desktop").style = ("background-color:" + getCookie("bgcolor") + ";background-image:url('" + getCookie("bgimage") + "')")
-		console.log("Cookied are defined, restoring settings...");
+		console.log("Cookies are defined, restoring settings...");
 	}
 }
 
