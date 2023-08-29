@@ -25,7 +25,15 @@ function appsclose() {
 }
 
 function about() {
-	openwindow("About System","<center><img src='logo.png'></center><br>Turron Technologies<br>Codename Foghorn Operating System<br>Made by Joshua in 2023.<br>This project uses 98.css and winjs.");
+	openwindow("About System",`
+	<center>
+	<img src='logo.png'>
+	</center>
+	<br>Turron Technologies
+	<br>Codename Foghorn Operating System
+	<br>Made by Joshua in 2023.
+	<br>This project uses <a href="https://github.com/jdan/98.css">98.css</a> and winjs.
+		`);
 }
 
 function sroot() {
@@ -41,5 +49,10 @@ function textrun() {
 	el && eval(el.value);
 }
 function textarea() {
-	openwindow("TextArea","<textarea id='codetext' rows='32' cols='64'></textarea><br><button onclick=\"openwindow('Window',document.getElementById('codetext').value);\">Make Window</button><button onclick=\"textrun();\">Execute JS</button>");
+	openwindow("TextArea",`
+	<textarea id='codetext' rows='32' cols='64'></textarea>
+	<br>
+	<button onclick="openwindow('Window',document.getElementById('codetext').value);">Make Window</button>
+	<button onclick="textrun();">Execute JS</button>
+		`);
 }
