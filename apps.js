@@ -11,7 +11,7 @@ function apps() {
 	newwindow("appmenu", "Applications",`
 	<button onclick="about();appsclose()">About System</button>
 	<button onclick="settings();appsclose()">Settings</button>
-	<button onclick="sroot();appsclose()">Browse Server</button>
+	<button onclick="browser();appsclose()">Browser</button>
 	<br>
 	<button onclick="furry();appsclose()">Furry</button>
 	<button onclick="textarea();appsclose()">TextArea</button>
@@ -38,8 +38,8 @@ function about() {
 		`);
 }
 
-function sroot() {
-	iwindow("File Browser","/",640,480);
+function browser() {
+	openwindow("Browser",`<input type='text' id=btex` + winid + ` style='width:565'><button onclick="document.getElementById('bframe` + winid + `').src = document.getElementById('btex` + winid + `').value">Go</button><iframe id=bframe` + winid + ` frameBorder='0' src='startpage.html' width=640 height=480></iframe>`,657);
 }
 
 function furry() {
