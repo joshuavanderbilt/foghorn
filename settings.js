@@ -25,10 +25,10 @@ function restoresettings() {
 	console.log(getCookie("bgimage"));
 	console.log(getCookie("bgcolor"));
 	if (getCookie("bgimage") == undefined && getCookie("bgcolor") == undefined) {
-		document.getElementById("desktop").style = ("background-color:#008080;background-image:url('bg.png');");
+		document.body.style = ("background-color:#008080;background-image:url('bg.png');");
 		console.log("Cookies are undefined, default values used.");
 	} else {
-		document.getElementById("desktop").style = ("background-color:" + getCookie("bgcolor") + ";background-image:url('" + getCookie("bgimage") + "')")
+		document.body.style = ("background-color:" + getCookie("bgcolor") + ";background-image:url('" + getCookie("bgimage") + "')")
 		console.log("Cookies are defined, restoring settings...");
 	}
 }
