@@ -3,18 +3,15 @@ var version = "Unstable Release"
 
 function openpanel() {
 	document.body.innerHTML += `
-	<div id="panel" class="window" style="position:absolute;top:0px;left:0px;width:640px;height:23px;">
+	<div id="panel" style="position:absolute;top:0px;left:0px;width:100%;height:30px;background-color:C0C0C0;background-image:url('panel.png');">
+			<div id="panelcontents" style="position:absolute;top:3px;left:3px;width:100%">
                         <button onclick="apps()">Applications</button>
                         <button onclick="launcher()">Launcher</button>
-                        <a href=".."><button>Logoff</button></a>
-			<button style="position:absolute;right:4px;" onclick="resetpanel()">Reposition</button>
-			<span class="status-bar-field" style="position:absolute;right:90px;top:4px;width:54px;height:16px"><center><span style="position:relative;top:2px" id="clock">00:00:00</span></center></span>
+			<button style="position:absolute;right:6px;" onclick="resetpanel()">Reposition</button>
+			<span class="status-bar-field" style="position:absolute;right:90px;top:1px;width:54px;height:17px;font-family:'Pixelated MS Sans Serif', Arial;-webkit-font-smoothing:none;font-size:11px;"><center><span style="position:relative;top:3px" id="clock">00:00:00</span></center></span>
+			</div>
                         </div>
 	`;
-	// Make panel draggable
-	 $( function() {
-    		$( ".window" ).draggable();
-         } );
 }
 
 function oslabel() {
