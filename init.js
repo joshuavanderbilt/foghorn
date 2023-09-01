@@ -4,7 +4,7 @@ var version = "Unstable Release"
 function openpanel() {
 	document.body.innerHTML += `
 	<div id="panel" style="position:absolute;top:0px;left:0px;width:100%;height:30px;background-color:C0C0C0;background-image:url('panel.png');">
-			<div id="panelcontents" style="position:absolute;top:3px;left:3px;width:100%">
+			<div id="panelcontents" style="position:absolute;top:3px;left:3px;width:calc(100% - 3px);">
                         <button onclick="apps()">Applications</button>
                         <button onclick="launcher()">Launcher</button>
 			<button style="position:absolute;right:6px;" onclick="closeall()">Close All</button>
