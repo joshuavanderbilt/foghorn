@@ -7,8 +7,8 @@ function openpanel() {
 			<div id="panelcontents" style="position:absolute;top:3px;left:3px;width:100%">
                         <button onclick="apps()">Applications</button>
                         <button onclick="launcher()">Launcher</button>
-			<button style="position:absolute;right:6px;" onclick="resetpanel()">Reposition</button>
-			<span class="status-bar-field" style="position:absolute;right:90px;top:1px;width:54px;height:17px;font-family:'Pixelated MS Sans Serif', Arial;-webkit-font-smoothing:none;font-size:11px;"><center><span style="position:relative;top:3px" id="clock">00:00:00</span></center></span>
+			<button style="position:absolute;right:6px;" onclick="closeall()">Close All</button>
+			<span class="status-bar-field" style="position:absolute;right:90px;top:1px;width:64px;height:17px;font-family:'Pixelated MS Sans Serif', Arial;-webkit-font-smoothing:none;font-size:11px;"><center><span style="position:relative;top:3px" id="clock">00:00:00</span></center></span>
 			</div>
                         </div>
 	`;
@@ -30,16 +30,16 @@ function resetpanel() {
 	openpanel();
 }
 
-// Clock code
-function time(){
-    var d = new Date();
-    var s = d.getSeconds();
-    var m = d.getMinutes();
-    var h = d.getHours();
-    document.getElementById('clock').innerHTML = (h + ":" + m + ":" + s);
+function closeall() {
+	document.querySelectorAll('.window').forEach(e => e.remove());
 }
 
-setInterval(time,1000);
+// Clock code
+function displayClock(){
+  var display = new Date().toLocaleTimeString();
+  document.getElementById('clock').innerHTML = display;
+  setTimeout(displayClock, 1000); 
+}
 // End of Clock
 
 // Set up the desktop.
@@ -47,4 +47,5 @@ window.onload = () => {
 	openpanel()
 	oslabel()
 	restoresettings()
+	displayClock()
 };
