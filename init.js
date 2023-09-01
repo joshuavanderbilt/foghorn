@@ -44,6 +44,7 @@ function displayClock(){
 
 // Set up the desktop.
 window.onload = () => {
+	document.title = osname + " " + version
 	openpanel()
 	oslabel()
 	restoresettings()

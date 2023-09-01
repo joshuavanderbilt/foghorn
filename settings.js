@@ -1,8 +1,25 @@
 function settings() {
 	openwindow("Settings Manager",`
-	<input type="text" id="bgtext" style="width:320">
+	<p>Desktop Background</p>
+	<input type="text" id="bgtext" style="width:355">
+	<br>
 	<button onclick="changebgcolor(document.getElementById('bgtext').value);">Change Background Color (HEX)</button>
 	<button onclick="changebgimage(document.getElementById('bgtext').value);">Change Background Image (URL)</button>
+	<br>
+	<button style="background-color:970000;color:ffffff" onclick="changebgcolor('970000');">Red</button>
+	<button style="background-color:AF9C00;color:000000"onclick="changebgcolor('AF9C00');">Yellow</button>
+	<button style="background-color:108500;color:ffffff"onclick="changebgcolor('108500');">Green</button>
+	<button style="background-color:009C6C;color:000000"onclick="changebgcolor('009C6C');">Teal</button>
+	<br>
+	<button style="background-color:008080;color:000000"onclick="changebgcolor('008080');">Default</button>
+	<button style="background-color:008FB5;color:000000"onclick="changebgcolor('008FB5');">Cyan</button>
+	<button style="background-color:001DB5;color:ffffff"onclick="changebgcolor('001DB5');">Blue</button>
+	<button style="background-color:6100D6;color:ffffff"onclick="changebgcolor('6100D6');">Purple</button>
+	<br>
+	<button style="background-color:D600CD;color:ffffff"onclick="changebgcolor('D600CD');">Pink</button>
+	<button style="background-color:000000;color:ffffff"onclick="changebgcolor('000000');">Black</button>
+	<button style="background-color:ffffff;color:000000"onclick="changebgcolor('ffffff');">White</button>
+	<br>
 	<button onclick="factoryreset();">Reset To Defaults</button>
 	`);
 }
