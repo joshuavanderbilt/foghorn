@@ -29,7 +29,7 @@ function appsclose() {
 function about() {
 	openwindow("About System",`
 	<center>
-	<img src='logo.png'>
+	<img src='emblem.png'>
 	</center>
 	<br>Turron Technologies
 	<br>Codename Foghorn Operating System
