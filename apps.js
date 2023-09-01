@@ -32,7 +32,8 @@ function about() {
 	<img src='emblem.png'>
 	</center>
 	<br>Turron Technologies
-	<br>Codename Foghorn Operating System
+	<br>` + osname + `
+	<br>` + version + `
 	<br>Made by Joshua in 2023.
 	<br>This project uses <a href="https://github.com/jdan/98.css">98.css</a> and winjs.
 		`);
